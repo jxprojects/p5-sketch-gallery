@@ -4,6 +4,7 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: white;
     background-size: cover;
+    text-align: center;
 }
 .sel {
     padding: 0;
@@ -60,4 +61,15 @@ footer p {
 }
 footer a {
     margin-top: -8px;
+}
+#wrapper {
+    display: flex;
+    justify-content: center; /* center horizontally */ 
+    margin-top: 10px;
+}
+#bdg {
+    margin-top: 40px;
+}
+#cap2 {
+    margin-top: 10px;
 }

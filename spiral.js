@@ -35,26 +35,22 @@ function setup() {
           colors[i][j] = 105 + (Math.random() *150);
       }
   }
-  for (var i=0; i<100; i++) {
+  for (var i=0; i<90; i++) {
       bkgcolors[i] = [];
-      for (var h=0; h<height; h+=5) {
-          bkgcolors[i][h] = [];
           for (var j=0; j<3; j++) {
-            bkgcolors[i][h][j] = 105 + (Math.random() *150);
+            bkgcolors[i][j] = 105 + (Math.random() *150);
           }
-      }
-      
   }
   
 }
 
 function draw() {
         noStroke();
-        for (var h=0; h<height; h+=5) {
-            for (var i=0; i<100; i++) {
-                fill(bkgcolors[i][h][0], bkgcolors[i][h][1], bkgcolors[i][h][2]);
-                rect(i * width/100, h, width/100, 500);
-            }
+        var j=0;
+        for (var i=0; i<90; i++) {
+            fill(bkgcolors[i][0], bkgcolors[i][1], bkgcolors[i][2]);
+            arc(centerPtX, centerPtH, 300, 300, radians(j), radians(j+4));
+            j+=4;
         }
     for (var i=0; i<index; i++) {
         noStroke();
