@@ -10,6 +10,20 @@
             var link = 'http://' + links[randIdx];
             window.open(link);
         };
+
+        function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
     </script>
 
     <meta charset="UTF-8">
@@ -30,7 +44,7 @@
 
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-    <script type="text/javascript" src="spiral.js"></script>
+    <!--<script type="text/javascript" src="spiral.js"></script>-->
     <script type="text/javascript" src="processing.min.js"></script>
 </head>
 <body>
@@ -43,11 +57,37 @@
         <hr>
     </div>
 
-    <div class="capt">
-        <a href="">spiral.js</a>
+    <div class="desc">
+        <h1 id="fixurself">Gallery<hr id="crossline"></h1>
+        <h3 class="ta">There's a lot of Processing on this page ... select with the menu.</h3>
     </div>
 
-    <div class="wrapper">
+    <div id="buildings" class="tabcontent">
+        <canvas data-processing-sources="buildings.pde"></canvas>
+      </div>
+      
+      <div id="spiral" class="tabcontent">
+        <canvas data-processing-sources="spiral.pde"></canvas>
+      </div>
+      
+      <div id="fluff" class="tabcontent">
+        <canvas data-processing-sources="fluff.pde"></canvas>
+      </div>
+
+      <div id="lunks" class="tabcontent">
+          <a href="">1: buildings.pde</a> <br>
+          <a href="">2: spiral.pde</a> <br>
+          <a href="">3: fluff.pde</a>
+      </div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'buildings')">1</button>
+        <button class="tablinks" onclick="openCity(event, 'spiral')">2</button>
+        <button class="tablinks" onclick="openCity(event, 'fluff')">3</button>
+        <button class="tablinks" onclick="openCity(event, 'lunks')">src code</button>
+      </div>
+
+    <!--<div class="wrapper">
         <canvas id="bdg" data-processing-sources="buildings.pde"></canvas>
         
     </div>
@@ -62,7 +102,7 @@
 
     <div class="capt" id="cap2">
         <a href="">fluff.pde</a>
-    </div>
+    </div>-->
 
     <footer>
         <p> Authors: Julia Kozak and Maxwell Ito</p>
