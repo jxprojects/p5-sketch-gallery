@@ -65,9 +65,9 @@ void draw() {
 
 class BuildingRHS {
   int vanishX, vanishY;
-  int myR = (int)(Math.random() * 255);
-  int myG = (int)(Math.random() * 255);
-  int myB = (int)(Math.random() * 255);
+  int myR = 100 + (int)(Math.random() * 155);
+  int myG = 100 + (int)(Math.random() * 155);
+  int myB = 100 + (int)(Math.random() * 155);
   int width;
   int height = (int)(100 + Math.random() * 300);
   int depth = (int)(50 + Math.random() * 100);
